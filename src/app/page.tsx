@@ -16,7 +16,7 @@ export default function Home() {
       <div className="max-w-4xl">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter bg-gradient-to-r from-white via-neutral-300 to-neutral-500 bg-clip-text text-transparent">
           Welcome to
-          <span className="ml-4 bg-gradient-to-r from-primary to-green-400 bg-clip-text text-transparent">
+          <span className="ml-4 bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent">
             VibeX Hub
           </span>
         </h1>
