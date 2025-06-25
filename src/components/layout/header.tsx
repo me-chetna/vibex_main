@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, User } from "lucide-react";
 
 const LogoIcon = () => (
   <svg
@@ -37,19 +37,19 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="flex h-16 items-center justify-between rounded-full border-2 border-primary/40 bg-card/80 px-6 backdrop-blur-sm shadow-[0_0_25px_theme(colors.primary/0.2)]">
+    <header className="flex h-16 items-center justify-between rounded-full border-2 border-primary/40 bg-card/80 px-4 md:px-6 backdrop-blur-sm shadow-[0_0_25px_theme(colors.primary/0.2)]">
       <Link
         href="/"
         className="flex items-center justify-center gap-2"
         prefetch={false}
       >
         <LogoIcon />
-        <span className="text-xl font-bold">VibeX</span>
+        <span className="text-lg md:text-xl font-bold">VibeX</span>
       </Link>
-      <nav className="hidden md:flex gap-6">
+      <nav className="flex items-center gap-2 sm:gap-4">
         <Link
           href="/hackup"
-          className={`text-base transition-colors ${
+          className={`text-sm md:text-base transition-colors ${
             pathname === "/hackup"
               ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
               : "font-semibold text-foreground/80 hover:text-foreground"
@@ -60,7 +60,7 @@ export default function Header() {
         </Link>
         <Link
           href="/vconnect"
-          className={`text-base transition-colors ${
+          className={`text-sm md:text-base transition-colors ${
             pathname === "/vconnect"
               ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
               : "font-semibold text-foreground/80 hover:text-foreground"
@@ -71,7 +71,7 @@ export default function Header() {
         </Link>
         <Link
           href="/quiz"
-          className={`text-base transition-colors ${
+          className={`text-sm md:text-base transition-colors ${
             pathname === "/quiz"
               ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
               : "font-semibold text-foreground/80 hover:text-foreground"
@@ -85,10 +85,11 @@ export default function Header() {
         <DropdownMenuTrigger asChild>
           <Button
             variant="secondary"
-            className="rounded-full font-semibold px-4 py-2 text-base"
+            className="rounded-full font-semibold px-3 md:px-4 py-2 text-base"
           >
-            Chetna Jain
-            <ChevronDown className="ml-2 h-4 w-4" />
+            <User className="inline md:hidden h-5 w-5" />
+            <span className="hidden md:inline">Chetna Jain</span>
+            <ChevronDown className="hidden md:inline ml-2 h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-56">
