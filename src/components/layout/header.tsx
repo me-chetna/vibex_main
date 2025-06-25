@@ -37,70 +37,73 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="flex h-16 items-center justify-between rounded-full border-2 border-primary/40 bg-card/80 px-4 md:px-6 backdrop-blur-sm shadow-[0_0_25px_theme(colors.primary/0.2)]">
-      <Link
-        href="/"
-        className="flex items-center justify-center gap-2"
-        prefetch={false}
-      >
-        <LogoIcon />
-        <span className="text-lg md:text-xl font-bold">VibeX</span>
-      </Link>
-      <nav className="flex items-center gap-2 sm:gap-4">
+    <header className="relative h-16 overflow-hidden rounded-full border-2 border-primary/40 bg-card/80 backdrop-blur-sm shadow-[0_0_25px_theme(colors.primary/0.2)]">
+      <div className="pointer-events-none absolute -left-40 top-0 h-full w-40 animate-light-sweep bg-gradient-to-b from-yellow-300/0 via-orange-400/50 via-red-500/50 to-yellow-300/0 blur-xl" />
+      <div className="relative z-10 flex h-full items-center justify-between px-4 md:px-6">
         <Link
-          href="/hackup"
-          className={`text-sm md:text-base transition-colors ${
-            pathname === "/hackup"
-              ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
-              : "font-semibold text-foreground/80 hover:text-foreground"
-          }`}
+          href="/"
+          className="flex items-center justify-center gap-2"
           prefetch={false}
         >
-          HackUp
+          <LogoIcon />
+          <span className="text-lg font-bold md:text-xl">VibeX</span>
         </Link>
-        <Link
-          href="/vconnect"
-          className={`text-sm md:text-base transition-colors ${
-            pathname === "/vconnect"
-              ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
-              : "font-semibold text-foreground/80 hover:text-foreground"
-          }`}
-          prefetch={false}
-        >
-          VConnect
-        </Link>
-        <Link
-          href="/quiz"
-          className={`text-sm md:text-base transition-colors ${
-            pathname === "/quiz"
-              ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
-              : "font-semibold text-foreground/80 hover:text-foreground"
-          }`}
-          prefetch={false}
-        >
-          Quiz
-        </Link>
-      </nav>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button
-            variant="secondary"
-            className="rounded-full font-semibold px-3 md:px-4 py-2 text-base"
+        <nav className="flex items-center gap-1 sm:gap-2">
+          <Link
+            href="/hackup"
+            className={`text-sm font-semibold transition-colors hover:text-foreground md:text-base ${
+              pathname === "/hackup"
+                ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
+                : "text-foreground/80"
+            }`}
+            prefetch={false}
           >
-            <User className="inline md:hidden h-5 w-5" />
-            <span className="hidden md:inline">Chetna Jain</span>
-            <ChevronDown className="hidden md:inline ml-2 h-4 w-4" />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="w-56">
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>Profile</DropdownMenuItem>
-          <DropdownMenuItem>Settings</DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>Log out</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+            HackUp
+          </Link>
+          <Link
+            href="/vconnect"
+            className={`text-sm font-semibold transition-colors hover:text-foreground md:text-base ${
+              pathname === "/vconnect"
+                ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
+                : "text-foreground/80"
+            }`}
+            prefetch={false}
+          >
+            VConnect
+          </Link>
+          <Link
+            href="/quiz"
+            className={`text-sm font-semibold transition-colors hover:text-foreground md:text-base ${
+              pathname === "/quiz"
+                ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
+                : "text-foreground/80"
+            }`}
+            prefetch={false}
+          >
+            Quiz
+          </Link>
+        </nav>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="secondary"
+              className="rounded-full px-2 py-1 text-sm font-semibold sm:px-3 sm:py-2 md:text-base"
+            >
+              <User className="inline h-5 w-5" />
+              <span className="hidden sm:inline">Chetna Jain</span>
+              <ChevronDown className="hidden sm:inline ml-2 h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-56">
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Settings</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Log out</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </header>
   );
 }

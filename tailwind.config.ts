@@ -69,6 +69,10 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
+        'light-sweep': {
+          '0%': { left: '-10rem' },
+          '100%': { left: '100%' },
+        },
         'accordion-down': {
           from: {
             height: '0',
@@ -87,6 +91,7 @@ export default {
         },
       },
       animation: {
+        'light-sweep': 'light-sweep 4s linear infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
