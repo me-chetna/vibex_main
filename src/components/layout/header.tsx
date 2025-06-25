@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -31,6 +34,8 @@ const LogoIcon = () => (
 );
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <header className="flex h-16 items-center justify-between rounded-full border-2 border-primary/40 bg-card/80 px-6 backdrop-blur-sm shadow-[0_0_25px_theme(colors.primary/0.2)]">
       <Link
@@ -44,21 +49,33 @@ export default function Header() {
       <nav className="hidden md:flex gap-6">
         <Link
           href="/hackup"
-          className="text-sm font-semibold text-foreground/80 hover:text-foreground transition-colors"
+          className={`text-sm transition-colors ${
+            pathname === "/hackup"
+              ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
+              : "font-semibold text-foreground/80 hover:text-foreground"
+          }`}
           prefetch={false}
         >
           HackUp
         </Link>
         <Link
           href="/vconnect"
-          className="text-sm font-semibold text-foreground/80 hover:text-foreground transition-colors"
+          className={`text-sm transition-colors ${
+            pathname === "/vconnect"
+              ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
+              : "font-semibold text-foreground/80 hover:text-foreground"
+          }`}
           prefetch={false}
         >
           VConnect
         </Link>
         <Link
           href="/quiz"
-          className="text-sm font-semibold text-foreground/80 hover:text-foreground transition-colors"
+          className={`text-sm transition-colors ${
+            pathname === "/quiz"
+              ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
+              : "font-semibold text-foreground/80 hover:text-foreground"
+          }`}
           prefetch={false}
         >
           Quiz
