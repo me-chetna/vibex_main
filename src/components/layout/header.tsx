@@ -49,7 +49,7 @@ export default function Header() {
       <nav className="hidden md:flex gap-6">
         <Link
           href="/hackup"
-          className={`text-sm transition-colors ${
+          className={`text-base transition-colors ${
             pathname === "/hackup"
               ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
               : "font-semibold text-foreground/80 hover:text-foreground"
@@ -60,7 +60,7 @@ export default function Header() {
         </Link>
         <Link
           href="/vconnect"
-          className={`text-sm transition-colors ${
+          className={`text-base transition-colors ${
             pathname === "/vconnect"
               ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
               : "font-semibold text-foreground/80 hover:text-foreground"
@@ -71,7 +71,7 @@ export default function Header() {
         </Link>
         <Link
           href="/quiz"
-          className={`text-sm transition-colors ${
+          className={`text-base transition-colors ${
             pathname === "/quiz"
               ? "font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent"
               : "font-semibold text-foreground/80 hover:text-foreground"
@@ -85,7 +85,7 @@ export default function Header() {
         <DropdownMenuTrigger asChild>
           <Button
             variant="secondary"
-            className="rounded-full font-semibold px-4 py-2 text-sm"
+            className="rounded-full font-semibold px-4 py-2 text-base"
           >
             Chetna Jain
             <ChevronDown className="ml-2 h-4 w-4" />
