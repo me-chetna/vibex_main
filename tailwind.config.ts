@@ -68,6 +68,9 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      backgroundImage: {
+        'navbar-gradient': 'linear-gradient(to right, #f472b6, #ef4444, #f59e0b, #f97316)',
+      },
       keyframes: {
         'light-sweep': {
           '0%': { left: '-10rem' },
