@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/layout/header";
 
 export const metadata: Metadata = {
-  title: "VibeX Hub",
+  title: "VibeX",
   description: "Your central hub for innovation, connection, and challenge.",
 };
 
@@ -23,9 +23,9 @@ export default function RootLayout({
           rel="stylesheet"
         ></link>
       </head>
-      <body className="font-body antialiased min-h-screen flex flex-col">
+      <body className="font-body antialiased min-h-screen flex flex-col p-4 md:p-6">
         <Header />
-        <main className="flex-1 flex flex-col">{children}</main>
+        <main className="flex-1 flex flex-col mt-8">{children}</main>
         <Toaster />
       </body>
     </html>

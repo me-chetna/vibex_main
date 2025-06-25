@@ -12,11 +12,11 @@ import { Code2, Users, Lightbulb } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center flex-1 p-4 md:p-8 text-center">
+    <div className="flex flex-col items-center justify-center flex-1 text-center">
       <div className="max-w-4xl">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter bg-gradient-to-r from-white via-neutral-300 to-neutral-500 bg-clip-text text-transparent">
           Welcome to
-          <span className="ml-4 bg-gradient-to-r from-primary to-fuchsia-500 bg-clip-text text-transparent">
+          <span className="ml-4 bg-gradient-to-r from-primary to-green-400 bg-clip-text text-transparent">
             VibeX Hub
           </span>
         </h1>
@@ -26,7 +26,7 @@ export default function Home() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 w-full">
-          <Card className="flex flex-col border-primary/20 hover:border-primary/60 transition-colors duration-300 hover:shadow-lg hover:shadow-primary/10">
+          <Card className="flex flex-col border-primary/20 hover:border-primary/60 transition-colors duration-300 hover:shadow-lg hover:shadow-primary/10 bg-card/80">
             <CardHeader>
               <div className="flex justify-center mb-4">
                 <div className="p-4 bg-primary/10 rounded-full">
@@ -47,7 +47,7 @@ export default function Home() {
             </CardFooter>
           </Card>
 
-          <Card className="flex flex-col border-primary/20 hover:border-primary/60 transition-colors duration-300 hover:shadow-lg hover:shadow-primary/10">
+          <Card className="flex flex-col border-primary/20 hover:border-primary/60 transition-colors duration-300 hover:shadow-lg hover:shadow-primary/10 bg-card/80">
             <CardHeader>
               <div className="flex justify-center mb-4">
                 <div className="p-4 bg-primary/10 rounded-full">
@@ -68,7 +68,7 @@ export default function Home() {
             </CardFooter>
           </Card>
 
-          <Card className="flex flex-col border-primary/20 hover:border-primary/60 transition-colors duration-300 hover:shadow-lg hover:shadow-primary/10">
+          <Card className="flex flex-col border-primary/20 hover:border-primary/60 transition-colors duration-300 hover:shadow-lg hover:shadow-primary/10 bg-card/80">
             <CardHeader>
               <div className="flex justify-center mb-4">
                 <div className="p-4 bg-primary/10 rounded-full">
